@@ -9,8 +9,9 @@ class Selector extends Component {
         this.state = {selected: 'sandnes', temperature: null, wind: "", location: "sandnes"};
 
         this.produrl = "https://runarweather-runarweather-separate-backend.azurewebsites.net/api/";
-        this.localapi = "http://localhost:3001/api/";
-        this.apiurl = this.localapi;
+        this.localurl = "http://localhost:3001/api/";
+
+        this.apiurl = this.produrl; // USE THIS TO CHANGE BETWEEN TEST AND PROD
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
