@@ -8,7 +8,7 @@ class Selector extends Component {
         super (props);
         this.state = {selected: 'sandnes', temperature: null, wind: "", location: "sandnes"};
 
-        this.produrl = "https://runarweather-runarweatherdev.azurewebsites.net/api";
+        this.produrl = "https://runarweather-runarweatherdev.azurewebsites.net/api/";
         this.localurl = "http://localhost:3001/api/";
 
         this.apiurl = this.produrl; // USE THIS TO CHANGE BETWEEN TEST AND PROD

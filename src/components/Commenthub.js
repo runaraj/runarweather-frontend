@@ -6,7 +6,7 @@ class Selector extends Component {
         super (props);
         this.state = {comments: [], location: this.props.location};
 
-        this.produrl = "https://runarweather-runarweatherdev.azurewebsites.net/database";
+        this.produrl = "https://runarweather-runarweatherdev.azurewebsites.net/database/";
         this.localdb = "http://localhost:3001/database/"
 
         this.dburl = this.produrl; // USE THIS TO CHANGE BETWEEN TEST AND PROD
