@@ -5,7 +5,10 @@ import Datadisplay from './Datadisplay';
 class Selector extends Component {
     constructor(props) {
         super (props);
-        this.state = {selected: 'sandnes', temperature: null, wind: "", location: ""}
+        this.state = {selected: 'sandnes', temperature: null, wind: "", location: ""};
+
+        this.apiurl = "https://runarweather-runarweather-separate-backend.azurewebsites.net/api/";
+        this.localapi = "http://localhost:3001/api/"
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +31,10 @@ class Selector extends Component {
     }
 
     update() {
-        fetch('/api/'+this.state.selected)
+        // console.log(fetch(this.localapi + this.state.selected));
+        fetch(this.apiurl+this.state.selected)
+            // .then(res => res.json())
+            // .then(data => console.log(data))
             .then(res => res.json())
             .then(data => {
                 var comp = data.weatherdata.forecast.tabular.time[0];
