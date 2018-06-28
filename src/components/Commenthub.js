@@ -28,7 +28,7 @@ class Selector extends Component {
         let new_comment = event.target.commentfield.value
         if (this.validateComment(new_comment)){
             let today = new Date().toLocaleString();
-            this.setState({comments: this.state.comments.concat([new_comment + " : " + today]) });
+            this.setState({comments: this.state.comments.concat([[new_comment , today]]) });
         }
         event.preventDefault();
 
@@ -36,8 +36,8 @@ class Selector extends Component {
 
     render() {
 
-        let commentList = this.state.comments.map((items) => 
-            <li key={items}>{items}</li>
+        let commentList = this.state.comments.map((item) => 
+            <li key={item[1]}>{item[0]} : {item[1]}</li>
         );
         return (
             <div>
