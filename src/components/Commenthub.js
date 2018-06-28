@@ -52,7 +52,7 @@ class Selector extends Component {
     }
 
     storeObject(obj) {
-        fetch(this.localdb+"insertcomment", {
+        fetch(this.dburl+"insertcomment", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -68,7 +68,7 @@ class Selector extends Component {
 
     // Load all stored comments when component mounts
     loadAllComments() {
-        fetch(this.localdb + "getcomments/"+this.state.location)
+        fetch(this.dburl + "getcomments/"+this.state.location)
             .then(res => res.json())
             .then(data => {
                 this.setState({comments: (data)});
