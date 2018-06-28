@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 //import './Selector.css';
 import Datadisplay from './Datadisplay';
+import Commenthub from './Commenthub';
 
 class Selector extends Component {
     constructor(props) {
         super (props);
-        this.state = {selected: 'sandnes', temperature: null, wind: "", location: ""};
+        this.state = {selected: 'sandnes', temperature: null, wind: "", location: "sandnes"};
 
-        this.apiurl = "https://runarweather-runarweather-separate-backend.azurewebsites.net/api/";
-        this.localapi = "http://localhost:3001/api/"
+        this.produrl = "https://runarweather-runarweather-separate-backend.azurewebsites.net/api/";
+        this.localapi = "http://localhost:3001/api/";
+        this.apiurl = this.localapi;
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,19 +46,23 @@ class Selector extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>I am selector man
-                <label>
-                    <select value={this.state.value} onChange={this.handleChange}>
-                        <option value="sandnes">Sandnes</option>
-                        <option value="stavanger">Stavanger</option>
-                        <option value="haugesund">Haugesund</option>
-                        <option value="sauda">Sauda</option>
-                    </select>
-                </label>
-                <input type="submit" value="Get data"/>
-                <div>{this.state.value}</div>
-                <Datadisplay data={this.state}/>
-            </form>
+            <div>
+                <form onSubmit={this.handleSubmit}>I am selector man
+                    <label>
+                        <select value={this.state.value} onChange={this.handleChange}>
+                            <option value="sandnes">Sandnes</option>
+                            <option value="stavanger">Stavanger</option>
+                            <option value="haugesund">Haugesund</option>
+                            <option value="sauda">Sauda</option>
+                        </select>
+                    </label>
+                    <input type="submit" value="Get data"/>
+                    <div>{this.state.value}</div>
+                    <Datadisplay data={this.state}/>
+                    
+                </form>
+                <Commenthub location={this.state.location}/>
+            </div>
 
         );
     }
