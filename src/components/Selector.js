@@ -31,13 +31,14 @@ class Selector extends Component {
         // console.log("Get data for: " + this.state.location);
         this.setState({location: this.state.selected});
         this.update();
+        console.log(process.env);
         event.preventDefault();
     }
 
     update() {
         // console.log(fetch(this.localapi + this.state.selected));
         fetch(this.apiurl+this.state.selected)
-            // .then(res => res.json())
+            // .then(regit diff
             // .then(data => console.log(data))
             .then(res => res.json())
             .then(data => {
@@ -59,7 +60,7 @@ class Selector extends Component {
                         </select>
                     </label>
                     <input type="submit" value="Get data"/>
-                    <div>{this.state.value}  {process.env}</div>
+                    <div>{this.state.value}</div>
                     <Datadisplay data={this.state}/>
                     
                 </form>
