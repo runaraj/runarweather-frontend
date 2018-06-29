@@ -1,4 +1,4 @@
-FROM node:carbon.alpine as builder
+FROM node:carbon-alpine as builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
