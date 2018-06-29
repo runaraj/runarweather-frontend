@@ -31,7 +31,7 @@ class Selector extends Component {
         // console.log("Get data for: " + this.state.location);
         this.setState({location: this.state.selected});
         this.update();
-        console.log(process.env);
+        console.log(process);
         event.preventDefault();
     }
 
