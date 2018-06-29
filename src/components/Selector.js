@@ -59,7 +59,7 @@ class Selector extends Component {
                         </select>
                     </label>
                     <input type="submit" value="Get data"/>
-                    <div>{this.state.value}</div>
+                    <div>{this.state.value}  {process.env}</div>
                     <Datadisplay data={this.state}/>
                     
                 </form>
