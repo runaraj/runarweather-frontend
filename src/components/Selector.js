@@ -32,6 +32,7 @@ class Selector extends Component {
         this.setState({location: this.state.selected});
         this.update();
         console.log(process);
+        console.log(process.env);
         event.preventDefault();
     }
 
