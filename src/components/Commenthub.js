@@ -8,8 +8,9 @@ class Selector extends Component {
 
         this.produrl = "https://runarweather-runarweatherdev.azurewebsites.net/database/";
         this.localdb = "http://localhost:3001/database/"
+        this.dockerprod = "https://runarweather-backend-docker.azurewebsites.net/database/"
 
-        this.dburl = this.produrl; // USE THIS TO CHANGE BETWEEN TEST AND PROD
+        this.dburl = this.dockerurl; // USE THIS TO CHANGE BETWEEN TEST AND PROD
 
 
         this.handleSubmit = this.handleSubmit.bind(this);
