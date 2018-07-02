@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 //import './Selector.css';
 import Datadisplay from './Datadisplay';
 import Commenthub from './Commenthub';
+import urlconfig from './urlconfig';
 
 class Selector extends Component {
     constructor(props) {
         super (props);
         this.state = {selected: 'sandnes', temperature: null, wind: "", location: "sandnes"};
 
-        this.produrl = "https://runarweather-runarweatherdev.azurewebsites.net/api/";
+/*         this.produrl = "https://runarweather-runarweatherdev.azurewebsites.net/api/";
         this.localurl = "http://localhost:3001/api/";
-
-        this.apiurl = this.produrl; // USE THIS TO CHANGE BETWEEN TEST AND PROD
+        this.dockerurl = "https://runarweather-backend-docker.azurewebsites.net/api/" */
+        this.apiurl = urlconfig.basicurl + 'api/';
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,7 +37,7 @@ class Selector extends Component {
     update() {
         // console.log(fetch(this.localapi + this.state.selected));
         fetch(this.apiurl+this.state.selected)
-            // .then(res => res.json())
+            // .then(regit diff
             // .then(data => console.log(data))
             .then(res => res.json())
             .then(data => {

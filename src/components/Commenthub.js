@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 //import './Selector.css';
+import urlconfig from './urlconfig';
 
-class Selector extends Component {
+class Commenthub extends Component {
     constructor(props) {
         super (props);
         this.state = {comments: [], location: this.props.location};
 
-        this.produrl = "https://runarweather-runarweatherdev.azurewebsites.net/database/";
+/*         this.produrl = "https://runarweather-runarweatherdev.azurewebsites.net/database/";
         this.localdb = "http://localhost:3001/database/"
+        this.dockerurl = "https://runarweather-backend-docker.azurewebsites.net/database/" */
 
-        this.dburl = this.produrl; // USE THIS TO CHANGE BETWEEN TEST AND PROD
+        this.dburl = urlconfig.basicurl + "database/";
 
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -96,4 +98,4 @@ class Selector extends Component {
     }
 }
 
-export default Selector;
+export default Commenthub;
