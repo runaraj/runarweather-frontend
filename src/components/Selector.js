@@ -12,8 +12,7 @@ class Selector extends Component {
 /*         this.produrl = "https://runarweather-runarweatherdev.azurewebsites.net/api/";
         this.localurl = "http://localhost:3001/api/";
         this.dockerurl = "https://runarweather-backend-docker.azurewebsites.net/api/" */
-
-        this.apiurl = urlconfig.apiurl; // USE THIS TO CHANGE BETWEEN TEST AND PROD
+        this.apiurl = urlconfig + 'api/';
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);

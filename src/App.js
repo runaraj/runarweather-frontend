@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Selector from './components/Selector';
+import Logdisplay from './components/Logdisplay';
 
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <Selector/>
+        <Logdisplay/>
       </div>
     );
   }
