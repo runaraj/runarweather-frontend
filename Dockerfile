@@ -27,6 +27,7 @@ COPY package*.json ./
 RUN npm install
 RUN npm install react-scripts@1.1.1 -g
 COPY . .
+EXPOSE 3000
 
 # start app
 CMD ["npm", "start"]
